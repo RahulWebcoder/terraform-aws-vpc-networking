@@ -33,3 +33,13 @@ module "nat" {
   public_subnet_id  = module.subnets.public_subnet_id
   private_subnet_id = module.subnets.private_subnet_id
 }
+
+terraform {
+  backend "s3" {
+    bucket         = "devops-tfstate-rahul-demo"
+    key            = "networking/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+  }
+}
