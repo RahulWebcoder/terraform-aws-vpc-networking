@@ -4,5 +4,4 @@ terraform.tfstate.backup
 *.tfvars
 *.pem
 *.key
-*.zip
 crash.log
